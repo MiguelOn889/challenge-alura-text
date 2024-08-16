@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Definir la animación hingel para la animacion de botones de color */
+@keyframes hingel {
+    0% { transform: scale(2); }
+    20% { transform: rotate(180deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(270deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); opacity: 0; }
+}
+
+:root{
+    --color-primario: #978376;
+    --color-secundario: #D9D9D9;
+    --color-terciario:#4D3B3B;
+    --color-cuartario:#FFD0B3;
+    --color-quintario:#F5E0D3;
+    --color-sexto:#DFA4A4;
+
+    --fuente-arial: Arial, Helvetica, sans-serif;
+    --fuente-times:'Times New Roman', serif;
+    --fuente-inter:'Inter', sans-serif;
+}
+
+*{
+    margin: 0; /*trabajar la hoja completa sin margenes previas*/
+    padding: 0; /*trabajar la hoja completa sin padding previos*/
+}
+body{
+    background-color: var(--color-primario);
+    box-sizing: border-box;
+}
+
+.encabezado{
+    display: flex;
+    justify-content: center; /*espacio entre los elementos del header*/
+}
+.encabezado__logo{
+    display: block;
+}
+.encabezado__presentacion__logo__alura{
+    width: 120px;
+    height: 48px;
+    position: absolute;
+    top: 48px;
+    left: 21px;
+    z-index: 1;
+
+}
+/*animacion lupa*/
+#lupa{
+    --animate-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.encabezado__presentacion__logo__lupa{
+    width: 120px;
+    height: 111px;
+    position: absolute;
+    top: 34px;
+    left: 36px;
+}
+/*animacion logo alura*/
+#alura{
+    --animate-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+.encabezado__color__page{
+    display: flex; /*distribuicion de los botones*/
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 80px;
+}
+.color__page__boton{
+    /*tamano y caracteristicas de los botones*/
+    width: 145px;
+    height: 45px;
+    border-radius: 24px;
+    background-color: var(--color-quintario);
+    font-size: 1.75rem;
+    font-family:var(--fuente-times);
+    color: var(--color-terciario);
+    border: 2px solid var(--color-quintario);
+}
+    /*animacion mediante :active, es decir cuando se presiona el boton*/
+.color__page__boton:active {
+    animation: hingel 2s ease-in-out alternate;
+}
+
+.color__page__boton:hover{
+    cursor: pointer;
+}
+/*animacion botones cambio de color*/
+.animate__animated.animate__rubberBand {
+    --animate-duration: 1s;
+}
+
+
+
+.presentacion{
+    display: flex;
+    padding: 5% 15%;
+    justify-content:space-between;
+    gap: 30px;
+}
+
+.presentacion__contenido{
+    align-items:center;
+}   
+
+.presentacion__contenido__primero{
+    padding-top: 50px;
+}
+
+.presentacion__contenido__primero__codigo{
+    width: 766px;
+    height: 547px;
+    background-color: var(--color-secundario);
+    opacity: 50%;
+    color: #0A3871;
+    border-radius: 10px;
+    border: 5px solid #000000;
+    box-shadow: 12px -11px 5px #000000; /*sombra que se va hacia arriba y a la derecha con intensidad de 5*/
+    font-family: var(--fuente-inter);
+    font-size: 2.5rem;
+    resize: none;/* para que no se pueda expandir*/
+    outline: none;/*para quitar un cuadro que se resalta al seleccionarlo*/
+}
+.presentacion__contenido__primero__codigo::placeholder{
+    font-size: 2rem; /* Cambia el tamaño de la fuente del placeholder */
+    font-family:var(--fuente-arial); /* Cambia el tipo de fuente del placeholder */
+    color: #0A3871; /* Cambia el color del placeholder */
+}
+
+.presentacion__contenido__informativo{
+    display: flex;
+    gap: 10px;
+    padding-top: 80px;
+    padding-left: 41px;
+    justify-content:left;
+}
+
+.presentacion__contenido__informativo__logo{
+    width: 16px;
+    height: 16px;
+}
+/*animacion texto informativo*/
+.animate__animated.animate__fadeInUp {
+    --animate-duration: 1s;
+}
+
+.presentacion__contenido__informativo__texto{
+    font-family:var(--fuente-arial);
+}
+
+.presentacion__botones{
+    display: flex;/*permite adaptar los elementos y alinearlos al centro*/
+    opacity: 75%;
+    gap: 30px; /*espeacio entre los elementos*/
+    justify-content: center; /*alinear al centro*/
+    padding-top: 16px;
+}    
+
+.presentacion__boton__encriptar{
+    background-color: var(--color-terciario);
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 2px solid var(--color-terciario);
+    font-size: 1.75rem;
+    font-family: var(--fuente-times);
+    box-shadow: 12px -11px 6px #00000080; /*EL ultimo numero 80 le da opacidad a la sombra*/
+    color: var(--color-cuartario);
+}
+
+.presentacion__boton__encriptar:hover{
+    cursor: pointer;
+}
+.presentacion__boton__encriptar:active{
+    transform: scale(0.95); /* Efecto de presionar el botón */
+    box-shadow: 1px -1px 1px var(--color-terciario)80; /* Efecto de quitar la sombra */
+    transform:translate(12px, -11px); /* Efecto trasladar el boton hacia donde estaba la sombra generando un efecto de hundimiento */
+}
+
+.presentacion__boton__Desencriptar{
+    background-color: var(--color-cuartario);
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 2px solid var(--color-cuartario);
+    box-shadow: 12px -11px 6px #00000080; /*EL ultimo numero 80 le da opacidad a la sombra*/
+    font-size: 1.75rem;
+    font-family:var(--fuente-times);
+    color: var(--color-terciario);
+}
+
+.presentacion__boton__Desencriptar:active{
+    transform: scale(0.95); /* Efecto de presionar el botón */
+    box-shadow: 1px -1px 1px var(--color-cuartario)80; /* Efecto de quitar la sombra */
+    transform:translate(12px, -11px); /* Efecto trasladar el boton hacia donde estaba la sombra generando un efecto de hundimiento */
+}
+
+.presentacion__boton__Desencriptar:hover{
+    cursor: pointer;
+}
+
+.presentacion__contenido__segundo{
+    display: flex;
+    width: 400px;
+    height: 944px;
+    border-radius: 32px;
+    background-color: var(--color-quintario);
+    align-items: center; /*alinea los elementos en el centro */
+    flex-direction: column; /*alinea los elementos uno debajo del otro */
+}
+/*animacion para la div*/
+.animate__animated.animate__fadeInRightBig{
+    --animate-duration: 0.5s;
+}
+/*animacion imagen sherlock*/
+.animate__animated.animate__fadeIn {
+    --animate-duration: 10s;
+}
+.presentacion__contenido__segundo__logo__sherlock{
+    display: flex; /*permite alinear los objetos*/
+}
+
+.nuevo{
+    text-align:center; /*alibea el texto en el centro*/
+    padding: 120px;
+    font-family:var(--fuente-inter);
+    font-size: 3rem;
+    font-weight: bold; /*negrita*/
+    width: 88%;
+}
+/*animacion texto sherlocked*/
+.animate__animated.animate__pulse {
+    --animate-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+.sherlock{
+    gap: 30px; /*espacio entre las letras*/
+    margin: 4px; /*separacion de las letras*/
+    border: solid 2px #000000; /*borde de las letras*/
+}
+/*animacion de los ojos*/
+.sherlock::after{
+    animation: l9 10s infinite;
+    transform: perspective(300px) translateZ(0px)
+}
+
+.presentacion__contenido__segundo__seccion{
+    display: block;
+    margin-top: auto;/*manda el boton al final del contenedor*/
+    padding-bottom: 30px;/*permite una distancia del final al boton*/
+
+}
+
+.presentacion__contenido__segundo__boton{
+    display: block;
+    background-color: var(--color-sexto);
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 2px solid var(--color-sexto);
+    box-shadow: 12px -11px 6px #00000080; /*EL ultimo numero 80 le da opacidad a la sombra*/
+    font-size: 1.75rem;
+    font-family:var(--fuente-times);
+    color: var(--color-terciario);
+    justify-content: center; /*alinar el texto en el medio*/
+    align-items: center; /*alinear texto en el centro*/
+    visibility: hidden; /*boton invisible*/
+}
+.presentacion__contenido__segundo__boton:active{
+transform: scale(0.95); /* Efecto de presionar el botón */
+box-shadow: 1px -1px 1px var(--color-cuartario)80; /* Efecto de quitar la sombra */
+transform:translate(12px, -11px); /* Efecto trasladar el boton hacia donde estaba la sombra generando un efecto de hundimiento */
+}
+
+.presentacion__contenido__segundo__boton:hover{
+    cursor: pointer;
+}
+
+/* HTML: <div class="loader"></div> codigo del loader*/ 
+.loader {
+    display: none;
+    gap: 10px;
+    padding: 43.6%;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    height: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      radial-gradient(farthest-side,#000 95%,#0000) 35% 35%/10px 10px no-repeat
+      #fff;
+    animation: l5 3s infinite;
+  }
+  @keyframes l5 {
+    0%,11%   {background-position:35% 35%}
+    14%,36%  {background-position:65% 35%}
+    38%,61%  {background-position:65% 65%}
+    64%,86%  {background-position:35% 65%}
+    88%,100% {background-position:35% 35%}
+  }
+.container{
+    text-align: center;
+}
+.footer{
+    border: solid 2px #000000;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    background-color: var(--color-secundario);
+    font: var(--fuente-arial);
+    font-size: 1.0rem;
+    display: inline-block;
+    justify-content: center;
+    padding: 10px 60px 10px 60px;
+
+}
+
+@media(max-width:768px){
+    body{
+        background-color: #ffffff;
+    }
+    .presentacion{
+        flex-direction: column;/*poner los elementos uno bajo del otro*/
+        justify-content: center;/*ajustarlos al centro*/
+        padding: 12px 0 0 0;/*dejar solo un padding de arriba para que no se cruce con el header*/
+    }
+    .presentacion__contenido__primero{
+        padding: 57px 30px 0 30px; /*ajustar el text area para quedar mas centrado*/
+    }
+    .presentacion__contenido__primero__codigo{
+        width: 88%; /*ajusta la caja de texto a la pantalla*/
+        background-color: transparent;
+        border: transparent;
+        box-shadow: none;
+    }
+    .presentacion__segundo{
+        padding: 40px; /* padding de la caja de texto */
+    }
+    .presentacion__contenido__segundo{
+        width: 100%;/*ajustar la anchura a la pantalla*/
+        height: auto;/*ajustar la altura a la pantalla*/
+    }
+    .presentacion__contenido__segundo__logo__sherlock{
+        display: none;/*ocultar la imagen de sherlock*/
+    }
+}
+
+@media(max-width:375px){
+    .encabezado{
+        width: auto;/*ajustar el tamano de los elementos*/
+        flex-direction: column; /*ajustar los botones y el logo en columnas*/
+        gap: 40px;/*espacio entre los elementos*/
+    }
+    .encabezado__presentacion__logo__alura{
+        width: 20%;/*modificar el tamano de la lupa aun mas*/
+        height: auto;
+        left: 0px;
+    }
+    .encabezado__presentacion__logo__lupa{
+        width: 20%;/*modificar el tamano del logo aun mas*/
+        height: auto;
+        left: 10px;
+    }
+    .presentacion__botones{
+        flex-direction: column;/*poner los botones uno debajo del otro*/
+        align-items: center; /*alinear los botones al centro*/
+    }
+    .presentacion__contenido__segundo__seccion{
+        display: flex; /*ajustar boton*/
+        width: 88%; /*ajustar el tamaño del boton*/
+    }
+}

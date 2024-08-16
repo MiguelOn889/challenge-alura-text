@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<div lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <audio id="sherlocked" src="./audio/Sherlocked .mp4"></audio>
+</head>
+<body>
+    <header class="encabezado">
+    <div class="encabezado__logo">    
+        <img class="encabezado__presentacion__logo__alura animate__animated animate__pulse" id="alura" src="./assets/Frame 7.png" alt="logo de la app">
+        <img class="encabezado__presentacion__logo__lupa animate__animated animate__pulse" id="lupa" src="./assets/lupa.png" alt="lupa de logo">
+    </div>    
+    <div class="encabezado__color__page">
+        <button id="boton1" class="color__page__boton animate__animated animate__rubberBand" onclick="colors_1();">color1</button>
+        <button class="color__page__boton animate__animated animate__rubberBand" onclick="colors_2();">color2</button>
+        <button id="boton3" class="color__page__boton animate__animated animate__rubberBand" onclick="colors_3()">color3</button>
+    </div>
+    </header>
+    <main class="presentacion">
+        <section class="presentacion__contenido">
+            <div class="presentacion__contenido__primero">    
+                <textarea class="presentacion__contenido__primero__codigo animate__animated animate__bounce" name="message" id="codigo" placeholder="Ingrese el texto aquí"></textarea>
+            </div>
+            <div class="presentacion__contenido__informativo">
+                <img class="presentacion__contenido__informativo__logo animate__animated animate__fadeInUp" src="./assets/exclamación.png">
+                <p class="presentacion__contenido__informativo__texto animate__animated animate__fadeInUp">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="presentacion__botones">
+                <button class="presentacion__boton__encriptar" onclick='codificar();' name="codificar">Encriptar</button>
+                <button class="presentacion__boton__Desencriptar" onclick='decodificar();' name="decodificar">Desencriptar</button>
+            </div>
+        </section>
+        <section class="presentacion__segundo">
+            <div class="presentacion__contenido__segundo animate__animated animate__fadeInRightBig">
+                <img id="sherlock" class="presentacion__contenido__segundo__logo__sherlock animate__animated animate__fadeIn" src="./assets/sherlock.png">
+                <div id="loader" class="loader hidden"></div>    
+                <p id="desencriptador" class="nuevo animate__animated animate__pulse">I AM<br><span class="sherlock">S</span><span class="sherlock">H</span><span class="sherlock">E</span><span class="sherlock">R</span><br>LOCKED</p>
+                <div class="presentacion__contenido__segundo__seccion">
+                     <button id="copiar" class="presentacion__contenido__segundo__boton" onclick="copiar();">Copiar</button>
+                </div>
+            </div>
+        </section>
+    </main>    
+</body>
+<div class="container">
+    <footer class="footer">Desarollado por MiguelDev</footer>
+</div> 
+<script src="prueba.js"></script>
+</html> 
